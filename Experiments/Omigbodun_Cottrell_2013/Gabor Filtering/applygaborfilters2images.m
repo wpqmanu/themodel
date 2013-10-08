@@ -70,12 +70,13 @@ folder = {'em' 'gs' 'jj' 'mf' 'mo' 'nr' 'pe' 'pf' 'sw' 'wf'};
 % for saving Gabor features
 files = folder;
 
-% variables which indicate if stimuli are filtered with Gabors
+%% IMPORTANT: variables which indicate if stimuli are filtered with Gabors
 % and/or displayed
-% filterStimuli = 1;
-filterStimuli = 0;
 
+filterStimuli = 1;
+% filterStimuli = 0; 
 displayStimuli = 0;
+%%
 
 if (filterStimuli == 1)
     locationFeatures = [pwd, '/Gabor Features/'];
@@ -85,6 +86,7 @@ end
 % For each subfolder (7 distinct facial expressions of an
 % actor/actress)
 for i=1:length(folder)
+    i
     % Locate a folder with images
     path = [locationImages, folder{i}];
 
@@ -103,6 +105,7 @@ for i=1:length(folder)
     % Use the full path to a file because the folder may not be the
     % active path
     fileName1 = fullfile(path,dirListing(fp1).name);
+    fileName1
     % Open or load file e.g. fopen(fileName)
     % imread(fileName, fileType') is used here.
     % File format needs to be specified correctly
